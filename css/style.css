@@ -1,1 +1,181 @@
-body{font-family:Arial,sans-serif;max-width:1200px;margin:0 auto;padding:20px;background-color:#f5f5f5}.header{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;padding-bottom:10px;border-bottom:2px solid#333}.mode-container{display:flex;gap:10px}button{padding:8px 15px;cursor:pointer;background-color:#4CAF50;color:white;border:none;border-radius:4px}button:hover{background-color:#45a049}.scene-container{display:flex;flex-direction:column;gap:30px}.scene{background-color:white;border:2px solid#ddd;padding:15px;border-radius:5px;box-shadow:0 2px 5px rgba(0,0,0,0.1)}.scene-title{text-align:center;margin-bottom:15px;font-weight:bold;font-size:18px;color:#333}.scene-content{display:flex;gap:20px;flex-wrap:wrap}.scene-bg{width:500px;height:350px;background-size:contain;background-repeat:no-repeat;background-position:center;position:relative;border:1px solid#eee;background-color:#f9f9f9}.signs-container{display:flex;flex-direction:column;gap:15px;width:200px}.sign{touch-action:none;width:100%;height:60px;background-size:contain;background-repeat:no-repeat;background-position:center;border:2px solid#ccc;cursor:move}.target{position:absolute;width:80px;height:40px;border:2px dashed#0b07ec;background-size:contain;background-repeat:no-repeat;background-position:center}.instruction-panel{flex:1;min-width:300px;padding:15px;background-color:#f0f8ff;border-radius:5px;border-left:4px solid#4CAF50}.current-step{font-size:18px;font-weight:bold;color:#333;margin-bottom:15px;min-height:54px}.step-action{font-size:16px;color:#555;margin-bottom:10px;padding:10px;background-color:#e6f7ff;border-radius:4px;white-space:pre-line}.navigation{display:flex;justify-content:space-between;margin-top:20px}.progress-container{margin-top:20px}progress{width:100%;height:20px}.score-display{font-size:20px;text-align:center;margin:20px 0;font-weight:bold;color:#333}.submit-btn{display:block;margin:20px auto;padding:12px 30px;font-size:18px;background-color:#2196F3}.submit-btn:hover{background-color:#0b7dda}.correct{border-color:green!important}.wrong{border-color:red!important}.hidden{display:none}.remove-btn{position:absolute;top:-10px;right:-10px;width:20px;height:20px;background-color:red;color:white;border-radius:50%;text-align:center;line-height:20px;cursor:pointer;display:none;z-index:10}.target:hover.remove-btn{display:block}.initially-hidden{display:none}button,.sign,.target{touch-action:manipulation}.zero-score{color:red;font-weight:bold;animation:blink 1s linear infinite}@keyframes blink{50%{opacity:0.5}}
+body {
+    font-family: Arial, sans-serif;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f5f5f5;
+}
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #333;
+}
+.mode-container {
+    display: flex;
+    gap: 10px;
+}
+button {
+    padding: 8px 15px;
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+}
+button:hover {
+    background-color: #45a049;
+}
+.scene-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+.scene {
+    background-color: white;
+    border: 2px solid #ddd;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+.scene-title {
+    text-align: center;
+    margin-bottom: 15px;
+    font-weight: bold;
+    font-size: 18px;
+    color: #333;
+}
+.scene-content {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+.scene-bg {
+    width: 500px;
+    height: 350px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    border: 1px solid #eee;
+    background-color: #f9f9f9;
+}
+.signs-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 200px;
+}
+.sign {
+    touch-action: none; /* 新增 */
+    width: 100%;
+    height: 60px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: 2px solid #ccc;
+    cursor: move;
+}
+.target {
+    position: absolute;
+    width: 80px;
+    height: 40px;
+    border: 2px dashed #0b07ec;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.instruction-panel {
+    flex: 1;
+    min-width: 300px;
+    padding: 15px;
+    background-color: #f0f8ff;
+    border-radius: 5px;
+    border-left: 4px solid #4CAF50;
+}
+.current-step {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 15px;
+    min-height: 54px;
+}
+.step-action {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #e6f7ff;
+    border-radius: 4px;
+    white-space: pre-line;
+}
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+.progress-container {
+    margin-top: 20px;
+}
+progress {
+    width: 100%;
+    height: 20px;
+}
+.score-display {
+    font-size: 20px;
+    text-align: center;
+    margin: 20px 0;
+    font-weight: bold;
+    color: #333;
+}
+.submit-btn {
+    display: block;
+    margin: 20px auto;
+    padding: 12px 30px;
+    font-size: 18px;
+    background-color: #2196F3;
+}
+.submit-btn:hover {
+    background-color: #0b7dda;
+}
+.correct { border-color: green !important; }
+.wrong { border-color: red !important; }
+.hidden { display: none; }
+.remove-btn {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    width: 20px;
+    height: 20px;
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 20px;
+    cursor: pointer;
+    display: none;
+    z-index: 10;
+}
+.target:hover .remove-btn {
+    display: block;
+}
+.initially-hidden {
+    display: none;
+}
+
+/* 确保可点击元素响应触摸 */
+button, .sign, .target {
+    touch-action: manipulation;
+}
+
+/* 新增零分提示样式 */
+.zero-score {
+    color: red;
+    font-weight: bold;
+    animation: blink 1s linear infinite;
+}
+@keyframes blink {
+    50% { opacity: 0.5; }
+}
